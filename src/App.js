@@ -9,15 +9,38 @@ class App extends Component {
     super(props)
 
     this.state = {
-      root: "/",
+      root: "/Users/hhouston/Desktop/IMT",
       files: []
     };
 
     this.fetchFiles = this.fetchFiles.bind(this);
+    this.clickBackwards = this.clickBackwards.bind(this);
+    this.clickForwards = this.clickForwards.bind(this);
+  }
+
+  clickBackwards(root) {
+
+    // let newRoot = root.replace(/\\[^\\]+$/,"");
+    root = root.match(/^(.*)\/[^/]*$/)[1];
+    console.log('newRoot: ', root);
+
+    this.fetchFiles(root);
+
+  }
+
+  clickForwards(newRoot) {
+    if (this.state.root != "/") {
+      newRoot = this.state.root + "/" + newRoot;
+    } else {
+      newRoot = this.state.root + newRoot;
+    }
+
+    this.fetchFiles(newRoot);
   }
 
   fetchFiles(root) {
-    console.log('fetch files');
+    console.log('fetch files from root', root);
+
     var options = {
       url: 'http://127.0.0.1:8080/test',
       headers: {
@@ -34,7 +57,7 @@ class App extends Component {
         console.log('SET FILES: ', json.files);
 
         this.setState ({
-          root: json.root,
+          root: root,
           files: json.files
         });
 
@@ -57,7 +80,7 @@ class App extends Component {
               <ul>
                 {
                   this.state.files.map((file, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} onClick={() => this.clickForwards(file)}>
                       {file}
                     </li>
                   ))
@@ -72,7 +95,10 @@ class App extends Component {
           <h2>StorNext GUI</h2>
         </div>
         <div className="App-intro">
-          <p>hey hey hey</p>
+
+          <button onClick={() => this.fetchFiles('/')}>Root</button>
+          <button onClick={() => this.clickBackwards(this.state.root)}>Back</button>
+          <h2>CWD: {this.state.root}</h2>
           {files}
         </div>
       </div>
