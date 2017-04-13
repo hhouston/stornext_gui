@@ -31,7 +31,7 @@ app.get('/test', function(req, res) {
       console.log("Error: " + err);
     } else {
       files.forEach((file, idx) => {
-        console.log(idx + ":" + file);
+        // console.log(idx + ":" + file);
       });
     }
 
