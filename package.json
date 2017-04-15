@@ -15,7 +15,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "node server/server.js",
+    "client": "node src/App.js 172.16.3.11 80",
+    "client local": "node src/App.js 127.0.0.1 80",
+    "server": "node server/server.js 172.16.3.51 8080",
+    "server local": "node server/server.js 127.0.0.1 8080",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
