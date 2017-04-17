@@ -19,8 +19,8 @@ app.use(function (req, res, next) {
 });
 
 app.get('/test', function(req, res) {
-  // const root = req.query.root
-  let root = '/stornext/snfs1';
+  const root = req.query.root
+  // let root = '/stornext/snfs1';
   console.log('root: ', root);
   console.log('root is of type: ', (typeof root));
   fs.readdir(root, (err, files) => {
