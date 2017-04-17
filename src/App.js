@@ -20,7 +20,9 @@ class App extends Component {
 
   clickBackwards(root) {
     let newRoot = root.match(/^(.*)\/[^/]*$/)[1];
-
+    if (newRoot === "") {
+      newRoot = "/"
+    }
     this.fetchFiles(newRoot);
   }
 
@@ -36,14 +38,14 @@ class App extends Component {
 
   fetchFiles(root) {
     var options = {
-      url: 'http://172.16.3.51:8080/test',
+      url: 'http://localhost:8080/test',
       headers: {
         'Content-Type': 'request',
         'Access-Control-Allow-Origin': '*'
+      },
+      qs: {
+        root: root
       }
-      // qs: {
-      //   root: root
-      // }
     };
 
     console.log('line before the request');
