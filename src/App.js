@@ -38,7 +38,8 @@ class App extends Component {
     var options = {
       url: 'http://172.16.3.51:8080/test',
       headers: {
-        'Content-Type': 'request'
+        'Content-Type': 'request',
+        'Access-Control-Allow-Origin': '*'
       }
       // qs: {
       //   root: root
