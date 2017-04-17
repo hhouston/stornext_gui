@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   clickForwards(newRoot) {
-    if (this.state.root != "/") {
+    if (this.state.root !== "/") {
       newRoot = this.state.root + "/" + newRoot;
     } else {
       newRoot = this.state.root + newRoot;
