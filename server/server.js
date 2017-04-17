@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('/test', function(req, res) {
-  const root = req.query.root
+  const root = "/stornext"
   fs.readdir(root, (err, files) => {
     if (err) {
       console.log("Error: " + err);
