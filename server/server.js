@@ -3,8 +3,8 @@ var app = express();
 var fs = require("fs");
 var path = require("path");
 
-var ip = process.env[2];
-var port = process.env[3]
+var ip = process.argv[2];
+var port = process.argv[3]
 
 
 var server = app.listen(port, ip, () => {
