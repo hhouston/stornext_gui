@@ -19,7 +19,8 @@ app.use(function (req, res, next) {
 });
 
 app.get('/test', function(req, res) {
-  const root = req.query.root.toString
+  // const root = req.query.root
+  let root = '/stornext/snfs1';
   console.log('root: ', root);
   fs.readdir(root, (err, files) => {
     if (err) {
