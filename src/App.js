@@ -41,7 +41,9 @@ class App extends Component {
       url: 'http://172.16.3.51:8080/test',
       headers: {
         'Content-Type': 'request',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'host': '172.16.3.51:8080',
+        'accept': '*/*'
       },
       qs: {
         root: root
