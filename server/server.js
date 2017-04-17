@@ -23,6 +23,7 @@ app.get('/test', function(req, res) {
   // let root = '/stornext/snfs1';
   console.log('root: ', root);
   console.log('root is of type: ', (typeof root));
+  console.log('req headers: ', req.headers);
   fs.readdir(root, (err, files) => {
     if (err) {
       console.log("Error: " + err);
