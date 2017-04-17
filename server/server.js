@@ -24,6 +24,8 @@ app.get('/test', function(req, res) {
   console.log('root: ', root);
   console.log('root is of type: ', (typeof root));
   console.log('req headers: ', req.headers);
+  console.log('res full: ', res);
+  
   fs.readdir(root, (err, files) => {
     if (err) {
       console.log("Error: " + err);

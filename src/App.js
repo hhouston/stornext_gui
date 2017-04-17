@@ -43,7 +43,8 @@ class App extends Component {
         'Content-Type': 'request',
         'Access-Control-Allow-Origin': '*',
         'host': '172.16.3.51:8080',
-        'accept': '*/*'
+        'accept': '*/*',
+        'user-agent': 'curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.21 Basic Ecc zlib/1.2.3 libidn/1.18 libssh2/1.4.2'
       },
       qs: {
         root: root
