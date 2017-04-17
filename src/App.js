@@ -38,7 +38,7 @@ class App extends Component {
 
   fetchFiles(root) {
     var options = {
-      url: 'http://localhost:8080/test',
+      url: 'http://172.16.3.51:8080/test',
       headers: {
         'Content-Type': 'request',
         'Access-Control-Allow-Origin': '*'
