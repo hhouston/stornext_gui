@@ -41,10 +41,7 @@ class App extends Component {
       url: 'http://172.16.3.51:8080/test',
       headers: {
         'Content-Type': 'request',
-        'Access-Control-Allow-Origin': '*',
-        'host': '172.16.3.51:8080',
-        'accept': '*/*',
-        'user-agent': 'curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.21 Basic Ecc zlib/1.2.3 libidn/1.18 libssh2/1.4.2'
+        'Access-Control-Allow-Origin': '*'
       },
       qs: {
         root: root
@@ -53,7 +50,7 @@ class App extends Component {
 
     console.log('line before the request');
     request(options, (err, res, body) => {
-      console.log('request made');
+      console.log('request made res: ', res);
       if (!err && res.statusCode === 200) {
         var json = JSON.parse(body);
         console.log("body: " + body)
@@ -66,8 +63,6 @@ class App extends Component {
         console.log(json.files + " files");
       } else {
         console.log('error: ', err);
-        console.log('res: ', res);
-        console.log("body: " + body)
       }
     });
   }
@@ -109,3 +104,14 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+//'host': '172.16.3.51:8080',
+//'accept': '*/*',
+//'user-agent': 'curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.21 Basic Ecc zlib/1.2.3 libidn/1.18 libssh2/1.4.2'
