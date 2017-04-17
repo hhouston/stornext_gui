@@ -22,7 +22,7 @@ app.get('/test', function(req, res) {
   // const root = req.query.root
   let root = '/stornext/snfs1';
   console.log('root: ', root);
-  console.log('root is an instanceof: ', root instanceof String);
+  console.log('root is of type: ', (typeof root));
   fs.readdir(root, (err, files) => {
     if (err) {
       console.log("Error: " + err);
