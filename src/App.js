@@ -48,7 +48,7 @@ class App extends Component {
     request(options, (err, res, body) => {
       if (!err && res.statusCode === 200) {
         var json = JSON.parse(body);
-
+        console.log("body: " + body)
         this.setState ({
           root: root,
           files: json.files
