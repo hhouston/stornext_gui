@@ -39,10 +39,10 @@ class App extends Component {
       url: 'http://172.16.3.51:8080/test',
       headers: {
         'Content-Type': 'request'
-      },
-      qs: {
-        root: root
       }
+      // qs: {
+      //   root: root
+      // }
     };
 
     request(options, (err, res, body) => {
