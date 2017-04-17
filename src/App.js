@@ -36,7 +36,7 @@ class App extends Component {
 
   fetchFiles(root) {
     var options = {
-      url: 'http://172.16.3.51:8080/test',
+      url: '172.16.3.51:8080/test',
       headers: {
         'Content-Type': 'request'
       }
@@ -60,6 +60,8 @@ class App extends Component {
         console.log(json.files + " files");
       } else {
         console.log('error: ', err);
+        console.log('res: ', res);
+        console.log("body: " + body)
       }
     });
   }
