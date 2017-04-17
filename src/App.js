@@ -36,7 +36,7 @@ class App extends Component {
 
   fetchFiles(root) {
     var options = {
-      url: 'http://172.16.3.51:8080/test',
+      url: 'http://private-svr:8080/test',
       headers: {
         'Content-Type': 'request'
       }
@@ -50,7 +50,7 @@ class App extends Component {
         var json = JSON.parse(body);
         console.log("body: " + body)
         this.setState ({
-          root: root,
+          root: "/",
           files: json.files
         });
 

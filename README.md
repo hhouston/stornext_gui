@@ -10,12 +10,14 @@ cd stornext_gui && npm install
 
 Run project node and client server locally
 
-$>> npm run server local
-$>> npm run client local
+$>> npm start (react app)
+
+$>> npm run client local (node server)
 
 Run project node and client server on production
 
-$>> npm run server
+$>> npm start
+
 $>> npm run client
 
 Tips
