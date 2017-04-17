@@ -9,7 +9,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      root: "/",
+      root: "/stornext/snfs1",
       files: []
     };
 
