@@ -1,5 +1,5 @@
 var request = require('request');
-
+var cors = require('cors');
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -52,7 +52,7 @@ class App extends Component {
     };
 
     console.log('line before the request');
-    request(options, (err, res, body) => {
+    request(options, true, (err, res, body) => {
       console.log('request made res: ', res);
       if (!err && res.statusCode === 200) {
         var json = JSON.parse(body);
