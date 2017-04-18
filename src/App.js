@@ -44,7 +44,8 @@ class App extends Component {
       headers: {
         'Content-Type': 'request',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*'
+        'Access-Control-Allow-Headers': '*',
+        'mode': 'no-cors'
       },
       qs: {
         root: root
