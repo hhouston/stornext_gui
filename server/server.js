@@ -14,7 +14,7 @@ var server = app.listen(port, ip, () => {
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET');
-    res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, Content-Type');
+    res.setHeader('Access-Control-Allow-Headers', '*');
     next();
 });
 
@@ -24,7 +24,7 @@ app.get('/test', function(req, res) {
   console.log('root: ', root);
   console.log('root is of type: ', (typeof root));
   console.log('req headers: ', req.headers);
-  
+
   fs.readdir(root, (err, files) => {
     if (err) {
       console.log("Error: " + err);
