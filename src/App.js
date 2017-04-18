@@ -52,7 +52,7 @@ class App extends Component {
     };
 
     console.log('line before the request');
-    request(options, {'mode': 'no-cors'}, (err, res, body) => {
+    request(options, (err, res, body) => {
       console.log('request made res: ', res);
       if (!err && res.statusCode === 200) {
         var json = JSON.parse(body);
