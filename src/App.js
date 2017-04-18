@@ -39,14 +39,11 @@ class App extends Component {
   fetchFiles(root) {
     var options = {
       // url: 'http://requestb.in/1e1pb9m1',
-      // url: 'http://172.16.3.51:8080/test',
-      url: 'http://google.com/',
+      url: 'http://172.16.3.51:8080/test',
       headers: {
         'Content-Type': 'request',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*',
-        'host': '136.179.6.56:80',
-        'accept': '*/*'
+        'Access-Control-Allow-Headers': '*'
       },
       qs: {
         root: root
