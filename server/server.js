@@ -3,6 +3,8 @@ var app = express();
 var fs = require("fs");
 var path = require("path");
 
+// var cors = require("cors");
+
 var ip = process.argv[2];
 var port = process.argv[3]
 
@@ -17,6 +19,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Headers', '*');
     next();
 });
+// app.use(cors());
 
 app.get('/test', function(req, res) {
   let root = req.query.root;
