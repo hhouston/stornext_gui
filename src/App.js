@@ -51,22 +51,27 @@ class App extends Component {
     };
 
     console.log('line before the request');
-    request(options, true, (err, res, body) => {
-      console.log('request made res: ', res);
-      if (!err && res.statusCode === 200) {
-        var json = JSON.parse(body);
-        console.log("body: " + body)
-        this.setState ({
-          root: root,
-          files: json.files
-        });
-
-        console.log(json.root + " root");
-        console.log(json.files + " files");
-      } else {
-        console.log('error: ', err);
-      }
-    }).pipe(fs.createWriteStream(res));
+    request('http://www.google.com', function (error, response, body) {
+      console.log('error:', error); // Print the error if one occurred 
+      console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+      console.log('body:', body); // Print the HTML for the Google homepage.
+    });
+    // request(options, (err, res, body) => {
+    //   console.log('request made res: ', res);
+    //   if (!err && res.statusCode === 200) {
+    //     var json = JSON.parse(body);
+    //     console.log("body: " + body)
+    //     this.setState ({
+    //       root: root,
+    //       files: json.files
+    //     });
+    //
+    //     console.log(json.root + " root");
+    //     console.log(json.files + " files");
+    //   } else {
+    //     console.log('error: ', err);
+    //   }
+    // });
   }
 
   componentWillMount() {
