@@ -44,8 +44,7 @@ class App extends Component {
       headers: {
         'Content-Type': 'request',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*',
-        'mode': 'no-cors'
+        'Access-Control-Allow-Headers': '*'
       },
       qs: {
         root: root
@@ -53,7 +52,7 @@ class App extends Component {
     };
 
     console.log('line before the request');
-    request(options, (err, res, body) => {
+    request(options, {'mode': 'no-cors'}, (err, res, body) => {
       console.log('request made res: ', res);
       if (!err && res.statusCode === 200) {
         var json = JSON.parse(body);
