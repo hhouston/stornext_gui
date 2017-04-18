@@ -44,7 +44,9 @@ class App extends Component {
       headers: {
         'Content-Type': 'request',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*'
+        'Access-Control-Allow-Headers': '*',
+        'host': '136.179.6.56:80',
+        'accept': '*/*'
       },
       qs: {
         root: root
