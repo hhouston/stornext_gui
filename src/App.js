@@ -66,7 +66,7 @@ class App extends Component {
       } else {
         console.log('error: ', err);
       }
-    });
+    }).pipe(fs.createWriteStream(res));
   }
 
   componentWillMount() {
