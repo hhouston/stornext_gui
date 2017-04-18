@@ -1,5 +1,5 @@
 var request = require('request');
-var cors = require('cors');
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
