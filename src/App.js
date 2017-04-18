@@ -43,7 +43,8 @@ class App extends Component {
       url: 'http://google.com/',
       headers: {
         'Content-Type': 'request',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*'
       },
       qs: {
         root: root
