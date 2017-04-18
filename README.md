@@ -12,13 +12,18 @@ Run project node and client server locally
 
 $>> npm start (react app)
 
-$>> npm run client local (node server)
+$>> npm run clientlocal (node server)
 
 Run project node and client server on production
 
 $>> npm start
 
 $>> npm run client
+
+*IMPORTANT*
+When running locally take out the PORT=80 in package.json line 17 &
+change the url in App.js to be localhost vs 172.16.3.51
+
 
 Tips
 ------------
