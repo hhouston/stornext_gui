@@ -44,10 +44,11 @@ class App extends Component {
     var options = {
       // url: 'http://requestb.in/19qhfq01',
       // url: 'http://localhost:8080/test',
-      url: 'http://localhost:23939/test',
+      // url: 'http://localhost:23939/test',
       // url: 'http://136.179.6.56:8080/test',
       // url: 'http://172.16.3.51:23939/test',
       // url: 'http://172.16.3.51:8080/test',
+      url: 'http://google.com/',
       headers: {
         'Content-Type': 'request',
         'Access-Control-Allow-Origin': '*'
