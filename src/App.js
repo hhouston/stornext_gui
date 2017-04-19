@@ -43,9 +43,9 @@ class App extends Component {
   fetchFiles(root) {
     var options = {
       // url: 'http://requestb.in/1m3h8fe1',
-      // url: 'http://localhost:8080/test',
+      url: 'http://localhost:8080/test',
       // url: 'http://136.179.6.56:8080/test',
-      url: 'http://172.16.3.51:23939/test',
+      // url: 'http://172.16.3.51:23939/test',
       // url: 'http://172.16.3.51:8080/test',
       // headers: {
       //   'Content-Type': 'request',
