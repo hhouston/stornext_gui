@@ -47,10 +47,10 @@ class App extends Component {
       // url: 'http://136.179.6.56:8080/test',
       // url: 'http://172.16.3.51:23939/test',
       url: 'http://172.16.3.51:8080/test',
-      // headers: {
-      //   'Content-Type': 'request',
-      //   'Access-Control-Allow-Origin': '*'
-      // },
+      headers: {
+        'Content-Type': 'request',
+        'Access-Control-Allow-Origin': '*'
+      },
       qs: {
         root: root
       }
