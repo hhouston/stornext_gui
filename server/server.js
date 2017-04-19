@@ -21,7 +21,7 @@ var server = app.listen(port, ip, () => {
   console.log('server listening at http://%s:%s', ip, port);
 });
 
-app.use(cors());
+cors_app.use(cors());
 
 var server2 = cors_app.listen(23939, ip, () => {
   console.log('cors module server listening at http://%s:%s', ip, 23939);
