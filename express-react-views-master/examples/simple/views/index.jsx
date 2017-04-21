@@ -29,7 +29,7 @@ function countTo(n:number):string {
 
   let return_files;
 
-  instance.get(`http://localhost:8080/test?root=%2F`)
+  instance.get(`http://172.16.3.51:8080/test?root=%2Fstornext`)
   .then(res => {
     console.log('data------------', res.data);
     const files = res.data.files;
