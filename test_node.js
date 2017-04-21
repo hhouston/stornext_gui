@@ -1,5 +1,7 @@
 "use strict"
 
+var request = require('request');
+
 var options = {
   // url: 'http://requestb.in/19qhfq01',
   // url: 'http://localhost:8080/test',
@@ -17,14 +19,14 @@ var options = {
   }
 };
 
-let instance = axios.create({
-  baseURL: 'http://localhost:8080/test',
-  timeout: 1000,
-  headers: {
-    'Content-Type': 'request',
-    'Access-Control-Allow-Origin': '*'
-    }
-});
+// let instance = axios.create({
+//   baseURL: 'http://localhost:8080/test',
+//   timeout: 1000,
+//   headers: {
+//     'Content-Type': 'request',
+//     'Access-Control-Allow-Origin': '*'
+//     }
+// });
 
 // axios.get(`http://www.reddit.com/r/EarthPorn/`)
 // .then(res => {
