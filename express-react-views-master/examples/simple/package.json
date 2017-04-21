@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "PORT=80 start": "node app.js"
+    "start": "PORT=80 node app.js"
   },
   "dependencies": {
     "errorhandler": "^1.4.3",
