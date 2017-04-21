@@ -1,6 +1,9 @@
+'use strict'
+
 var React = require('react');
 var Layout = require('./layout');
 var request = require('request');
+import axios from 'axios';
 
 
 // Contrived example to show how one might use Flow type annotations
@@ -13,36 +16,36 @@ function countTo(n:number):string {
 
   let root = "/";
 
-  var options = {
-    url: 'http://172.16.3.51:8080/test',
-    // url: 'http://localhost:8080/test',
+  // 'http://172.16.3.51:8080/test',
+
+  let instance = axios.create({
+    baseURL: 'http://172.16.3.51:8080/test',
+    timeout: 1000,
     headers: {
       'Content-Type': 'request',
       'Access-Control-Allow-Origin': '*'
-    },
-    qs: {
-      root: root
-    }
-  };
-
-  let return_res;
-  let return_body;
-
-  request(options, (err, res, body) => {
-    return_res = res;
-    console.log('request made res: ', res);
-    if (!err && res.statusCode === 200) {
-      var json = JSON.parse(body);
-      console.log("body: " + body)
-
-      console.log(json.root + " root");
-      console.log(json.files + " files");
-    } else {
-      console.log('error: ', err);
-    }
+      }
   });
 
-  return 'test';
+  let return_files;
+
+  instance.get(`http://localhost:8080/test?root=%2F`)
+  .then(res => {
+    console.log('data------------', res.data);
+    const files = res.data.files;
+
+    return_files = files;
+    console.log('type: ', typeof return_files);
+    console.log(return_files);
+    return 'hi';
+    // this.setState({ files });
+  })
+  .catch(err => {
+    // Something went wrong. Save the error in state and re-render.
+    console.log('axios error: ', err);
+    return 'error'
+  });
+  return 'hey';
 }
 
 class Index extends React.Component {
