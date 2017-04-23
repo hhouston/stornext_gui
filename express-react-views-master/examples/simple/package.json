@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "PORT=80 node app.js"
   },
   "dependencies": {
     "axios": "^0.16.1",
