@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "PORT=80 node app.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "axios": "^0.16.1",
@@ -12,6 +12,7 @@
     "express-react-views": "file:../../",
     "morgan": "^1.7.0",
     "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react-dom": "^15.0.0",
+    "request-promise": "^4.2.0"
   }
 }
