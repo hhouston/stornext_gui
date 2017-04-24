@@ -2,7 +2,7 @@ export function fetchFiles(root) {
   return (
     $.ajax({
       method: "GET",
-      url: 'http://localhost:9000/test?root=%2F'
+      url: 'http://172.16.3.51:9000/test?root=%2F'
     })
   );
 }
