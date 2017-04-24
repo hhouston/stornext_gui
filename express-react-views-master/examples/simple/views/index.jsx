@@ -5,8 +5,6 @@ import React, { Component } from 'react';
 // var configureStore = require('../redux/store');
 // var reducer = require('../redux/root_reducer');
 // var Provider = require('react-redux');
-var $ = require('jquery');
-require('import-export');
 
 var Layout = require('./layout');
 
@@ -180,7 +178,7 @@ class Index extends Component {
 
 
         // console.log('files in render: ', files);
-        
+
         let  files_comp =
                   <ul>
                     {

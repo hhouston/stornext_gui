@@ -30,5 +30,5 @@ gulp.task('dev',['copy'], shell.task([
 ]));
 
 gulp.task('deploy',['copy'], shell.task([
-  "NODE_ENV=production webpack -p --config webpack.production.config.js"
+  "NODE_ENV=production PORT=80 webpack -p --config webpack.production.config.js"
 ]));
