@@ -2,7 +2,7 @@ export function fetchFiles(root) {
   return (
     $.ajax({
       headers: {
-        'Content-Type': 'request',
+        'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
       },
       qs: {
