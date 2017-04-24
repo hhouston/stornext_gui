@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,"index.html"));
 });
 
-var server = app.listen(port,ipaddress, function () {
+var server = app.listen(port, '172.16.3.11', function () {
 
   console.log('Example app listening at http://%s:%s', ipaddress, port);
 });
