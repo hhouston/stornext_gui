@@ -11,7 +11,8 @@ export function fetchFiles(root) {
       method: "GET",
       // url: 'http://172.16.3.51:8080/test',
       url: 'http://requestb.in/1f87ot71',
-      crossDomain: true
+      crossDomain: true,
+      dataType: 'jsonp'
     })
   );
 }
