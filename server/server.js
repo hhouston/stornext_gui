@@ -49,7 +49,6 @@ app.get('/test', function(req, res) {
     });
 
     var json = JSON.stringify({
-      root,
       files
     });
     res.end(json);
@@ -78,7 +77,6 @@ cors_app.get('/test', function(req, res) {
     });
 
     var json = JSON.stringify({
-      root,
       files
     });
     res.end(json);

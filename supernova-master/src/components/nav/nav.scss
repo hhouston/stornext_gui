@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+
+
+.leftPanel {//rgba(47, 2, 47, 0.95);
+  background-color:rgba(45, 45, 45, 1); 
+  color: #AEBFCE;
+  position: relative;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  width:270px;
+
+  font-family: 'Fira Sans', sans-serif;
+}
+.about {
+  overflow-y: auto;
+  z-index:1;
+  position: relative;
+  color:white;
+  overflow-x:hidden;
+  flex:1;
+  max-height: auto;
+  transition: none;
+}
+h1.upperCase {
+  text-transform: uppercase;
+}
+.glow {
+  text-shadow: #2fd575 0 0 10px, #8656ba 5px 5px 5px;
+}
+
+.yShift {
+  animation: yShift 1.2s forwards;
+}
+
+@keyframes yShift {
+  0%{
+    transform: translateY(20px);
+    opacity: 0;
+    z-index: 5;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+
+.leftSelector {
+  font-size:1.3em;
+  cursor: pointer;
+  padding:10px 0px 10px 5px;
+  display:block;
+  font-family: 'Fira Sans', sans-serif;
+  letter-spacing: 2px;
+}
+.leftSelector:hover {
+  background-color: rgba(126, 126, 126, 0.81);
+}
+.leftSelector:active {
+  @extend .glow;
+}
+.icon {
+  padding:5px;
+  border-radius: 5px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  img {
+    width: 25px;
+    opacity: .8;
+    padding: 2.5px;
+  }
+}
+.icon:hover {
+  background-color:rgb(147, 147, 147);
+}
+.mobileOnly {
+  display:none;
+}
+.button {
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgba(126, 126, 126, 0.81);
+  border-radius:5px;
+  padding:1px;
+}
+//flexs my right content on small screens
+@media (max-width: 767px) {
+  .mobileOnly {
+    display:block;
+  }
+  .leftPanel {
+    color: #AEBFCE;
+    flex:0 0 auto;
+    position: relative;
+    overflow:hidden;
+    max-width: none;
+    padding: 0px 0px;
+    width:100%;
+  }
+  .about {
+    overflow:hidden;
+    position:relative;
+    top:auto;
+    width:auto;
+    width:100%;
+    transition: max-height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .growHeight {
+    max-height: auto;
+  }
+  .leftSelector {
+    padding:7px 0px 7px 5px;
+  }
+}

@@ -1,0 +1,86 @@
+* {
+  font-family:'Avenir', sans-serif;
+  color: #F5F5F5;
+}
+p {
+    font-size:1.4em;
+}
+h1 {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.75em;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+::selection { 
+  background: rgb(225, 145, 238);
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x:hidden;
+  overflow-y: auto;
+}
+html {
+  margin: 0;
+  padding: 0;
+  height:100%;
+}
+a {
+  color:white;
+  cursor: pointer;
+}
+a:hover {
+  color: rgb(189, 189, 189)
+}
+::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+    background-color: rgba(139, 254, 206, 0.5);
+}
+::-webkit-scrollbar-thumb {
+    background: #4b4b4b;
+}
+
+.main {
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items: stretch;
+}
+
+.rightContent {
+  padding: 5px;
+  background-color: rgba(#252525, 0.34);
+  flex: 1 0 auto;
+  color:black;
+  overflow-y: hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+
+.gallery {
+  flex: 1;
+  display:flex;
+  align-items: center;
+  flex-direction:column;
+}
+
+.verticalCenter {
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+//flexs my right content on small screens
+@media (max-width: 767px) {
+  .main {
+    flex-direction: column;
+  }
+  .rightContent {
+    width:auto;
+  }
+}
