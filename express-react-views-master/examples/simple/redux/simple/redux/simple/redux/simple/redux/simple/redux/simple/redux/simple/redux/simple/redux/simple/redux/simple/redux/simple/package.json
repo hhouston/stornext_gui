@@ -11,18 +11,16 @@
     "errorhandler": "^1.4.3",
     "express": "^4.13.4",
     "express-react-views": "file:../../",
-    "jquery": "^3.2.1",
     "morgan": "^1.7.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
-    "react-http-request": "^1.0.3",
     "request-promise": "^4.2.0"
   },
   "devDependencies": {
-    "babel-cli": "*",
-    "babel-core": "*",
-    "babel-preset-es2015-node6": "*",
-    "babel-preset-stage-3": "*",
-    "babel-register": "*"
+  "babel-cli": "*",
+  "babel-core": "*",
+  "babel-preset-es2015-node6": "*",
+  "babel-preset-stage-3": "*",
+  "babel-register": "*"
   }
 }

@@ -1,12 +1,19 @@
 var request = require('request');
-var request_promise = require('request-promise')
-// var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-// var xhr = new XMLHttpRequest();
-
+var request_promise = require('request-promise');
+var $ = require('jquery');
+import Request from 'react-http-request';
 import React, { Component } from 'react';
+// var configureStore = require('../redux/store');
+// var reducer = require('../redux/root_reducer');
+// var Provider = require('react-redux');
+
+require('import-export');
+
+var Layout = require('./layout');
+
 import axios from 'axios';
 
-class App extends Component {
+class Index extends Component {
   constructor(props) {
     super(props)
 
@@ -15,7 +22,6 @@ class App extends Component {
       files: []
     };
 
-    this.fetchFiles = this.fetchFiles.bind(this);
     this.clickBackwards = this.clickBackwards.bind(this);
     this.clickForwards = this.clickForwards.bind(this);
   }
@@ -38,107 +44,28 @@ class App extends Component {
     this.fetchFiles(newRoot);
   }
 
-  fetchFiles(root) {
-    var options = {
-      // url: 'http://requestb.in/19qhfq01',
-      // url: 'http://localhost:8080/test',
-      // url: 'http://localhost:23939/test',
-      // url: 'http://136.179.6.56:8080/test',
-      // url: 'http://172.16.3.51:23939/test',
-      url: 'http://172.16.3.51:8080/test',
-      // url: 'http://google.com/',
-      headers: {
-        'Content-Type': 'request',
-        'Access-Control-Allow-Origin': '*'
-      },
-      qs: {
-        root: root
-      }
-    };
-
-    let instance = axios.create({
-      baseURL: 'http://localhost:8080/test',
-      timeout: 1000,
-      headers: {
-        'Content-Type': 'request',
-        'Access-Control-Allow-Origin': '*'
-        }
-    });
-
-    // axios.get(`http://www.reddit.com/r/EarthPorn/`)
-    // .then(res => {
-    //   const files = res.data.data.children.map(obj => obj.data);
-    //   this.setState({ files });
-    // })
-    // .catch(err => {
-    //   // Something went wrong. Save the error in state and re-render.
-    //   console.log('axios error: ', err);
-    // });;
-
-    // console.log('line before the request');
-    // request('http://www.google.com', function (error, response, body) {
-    //   console.log('error:', error); // Print the error if one occurred
-    //   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-    //   console.log('body:', body); // Print the HTML for the Google homepage.
-    // });
-    let _this = this;
-    request_promise(options, (err, res, body) => {
-      // console.log('request made res: ', res);
-      if (!err && res.statusCode === 200) {
-        var json = JSON.parse(body);
-        // console.log("body: " + body)
-
-        console.log("files in request", json.files);
-        return json.files
-
-        // console.log(json.root + " root");
-        // console.log(json.files + " files");
-      } else {
-        console.log('error: ', err);
-        return 'error';
-      }
-    }).then((response) => {
-      _this.setState ({
-        files: response
-      });
-    });
-  }
-
-  componentWillMount() {
-    this.fetchFiles(this.state.root);
-    console.log(this.state.files);
-  }
-
   render() {
 
-    let files
-    if (this.state.files) {
-      files =
-              <ul>
-                {
-                  this.state.files.map((file, i) => (
-                    <li key={`error-${i}`} onClick={() => this.clickForwards(file)}>
-                      {file}
-                    </li>
-                  ))
-                }
-              </ul>;
-    }
-
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>StorNext GUI</h2>
-        </div>
-        <div className="App-intro">
-          <button onClick={() => this.fetchFiles('/')}>Root</button>
-          <button onClick={() => this.clickBackwards(this.state.root)}>Back</button>
-          <h2>CWD: {this.state.root}</h2>
-          {files}
-        </div>
-      </div>
+
+        <Request
+          url='http://localhost:8080/test?root=%2F'
+          method='get'
+          accept='application/json'
+          verbose={true}
+        >
+          {
+            ({error, result, loading}) => {
+              if (loading) {
+                return <div>loading...</div>;
+              } else {
+                return <div>{ JSON.stringify(result) }</div>;
+              }
+            }
+          }
+        </Request>
     );
   }
 }
 
-export default App;
+export default Index;
