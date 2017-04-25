@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "cors": "^2.8.3",
+    "forever": "^0.15.3",
     "http": "0.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -23,7 +24,7 @@
     "client": "node src/App.js 172.16.3.11 80",
     "clientlocal": "node src/App.js 127.0.0.1 80",
     "server": "node server/server.js 172.16.3.51 8080",
-    "serverlocal": "node server/server.js 127.0.0.1 9000",
+    "serverlocal": "forever server/server.js 127.0.0.1 8080",
     "serverlb": "node server/server.js 136.179.6.56 8080",
     "dev": "concurrently --kill-others \"npm run serverlocal\" \"npm start\"",
     "build": "react-scripts build",

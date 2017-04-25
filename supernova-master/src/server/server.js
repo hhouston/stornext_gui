@@ -14,5 +14,5 @@ app.get('/', function (req, res) {
 
 var server = app.listen(port, '172.16.3.11', function () {
 
-  console.log('Example app listening at http://%s:%s', ipaddress, port);
+  console.log('Example app listening at http://%s:%s', '172.16.3.11', port);
 });

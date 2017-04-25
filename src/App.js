@@ -13,7 +13,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      root: "/stornext/snfs1",
+      root: "/",
       files: []
     };
 
@@ -43,9 +43,9 @@ class App extends Component {
   fetchFiles(root) {
     var options = {
       // url: 'http://requestb.in/19qhfq01',
-      url: 'http://localhost:8080/test',
+      // url: 'http://localhost:8080/test',
       // url: 'http://localhost:23939/test',
-      // url: 'http://136.179.6.56:8080/test',
+      url: 'http://136.179.6.56:8080/test',
       // url: 'http://172.16.3.51:23939/test',
       // url: 'http://172.16.3.51:8080/test',
       // url: 'http://google.com/',
@@ -55,7 +55,8 @@ class App extends Component {
       },
       qs: {
         root: root
-      }
+      },
+      dataType: 'jsonp'
     };
 
     let instance = axios.create({

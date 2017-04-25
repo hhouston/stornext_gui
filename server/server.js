@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var cors_app = express();
 
 var fs = require("fs");
 var path = require("path");
@@ -13,7 +12,7 @@ var http = require('http');
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET');
-    res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, Content-Type');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin');
     next();
 });
 
@@ -43,10 +42,13 @@ app.get('/test', function(req, res) {
       "Access-Control-Allow-Origin": "*"
     });
 
-    var json = JSON.stringify({
-      files
-    });
-    res.end(json);
+    // var json = JSON.stringify({
+    //   files
+    // });
+    // res.end(json);
+    let jsonp = res.jsonp({name: 'hunter'});
+    console.log('---------jsonp: ', jsonp);
+    res.end()
   })
 });
 

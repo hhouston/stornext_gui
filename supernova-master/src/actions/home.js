@@ -12,7 +12,8 @@ export function fetchFiles(root) {
       url: 'http://172.16.3.51:8080/test',
       // url: 'http://requestb.in/1f87ot71',
       crossDomain: true,
-      dataType: 'jsonp'
+      dataType: 'json',
+      mode: 'no-cors'
     })
   );
 }
