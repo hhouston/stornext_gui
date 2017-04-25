@@ -37,18 +37,18 @@ app.get('/test', function(req, res) {
       });
     }
 
-    let jsonp = res.jsonp({name: 'hunter'});
     console.log('---------jsonp: ', jsonp);
     res.writeHead(200, {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*"
     });
 
+    res.jsonp({name: 'hunter'});
     // var json = JSON.stringify({
     //   files
     // });
     // res.end(json);
-    res.end(jsonp)
+    // res.end(jsonp)
   })
 });
 
