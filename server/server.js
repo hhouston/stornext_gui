@@ -37,7 +37,7 @@ app.get('/test', function(req, res) {
       });
     }
 
-    console.log('---------jsonp: ', jsonp);
+    // console.log('---------jsonp: ', jsonp);
     res.writeHead(200, {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*"
